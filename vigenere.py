@@ -32,12 +32,9 @@ class Vigenere:
         clave = clave.upper()
         descifrado = ''
         for i in range(len(mensaje)):
-            if mensaje[i] == ' ':
-                descifrado += ' '
-            else:
-                letraTexto = self.dict[mensaje[i]]
-                letraClave = self.dict[self.clave[i]]
-                descifrado += self.numCh[(letraTexto - letraClave) % len(self.dict)]
+            letraTexto = self.dict[mensaje[i]]
+            letraClave = self.dict[self.clave[i]]
+            descifrado += self.numCh[(letraTexto - letraClave) % len(self.dict)]
         return descifrado
 
     def __init__(self):
